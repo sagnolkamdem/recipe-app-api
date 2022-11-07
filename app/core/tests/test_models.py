@@ -26,6 +26,14 @@ class ModelTests(TestCase):
             self.assertEqual(user.email, expected)
 
     def test_new_user_without_email_raise_error(self):
+        """
+        The test_new_user_without_email_raise_error function tests that a ValueError is raised when the user does not provide an email address.
+        It creates a new user without an email address and then checks to see if the value error was raised.
+
+        :param self: Access variables that belongs to the test case class
+        :return: The following:
+        :doc-author: Trelent
+        """
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user('', "sample123")
 
